@@ -7,7 +7,8 @@ Write a function named getCourseKeys that takes in the courseInfo object and ret
 
 For example: (['name', 'duration', 'topics', 'finalExam']).
 ------------------------------------------------------------------------------------------------ */
-const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks'},
+const courseInfo = {
+  name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks' },
   topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
   finalExam: true
 };
@@ -15,11 +16,11 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 const getCourseKeys = (obj) => {
   // Solution code here...
   let resault = [];
-  for ( let property in obj){
+  for (let property in obj) {
 
-      resault.push(property);
+    resault.push(property);
   }
-  return resault ;
+  return resault;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -77,7 +78,7 @@ let characters = [
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
-  for (let i = 0 ; i < arr.length ; i++){
+  for (let i = 0; i < arr.length; i++) {
     houses.push(arr[i].house);
   }
   return houses;
@@ -97,13 +98,23 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
-if ( Object.values(arr))[]) {
-    return true ;   
-}else{
-    return false
-}
-};
+  let answer;
+  // let names = Object.values(arr[6].children)
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].name === character) {
+      if (Object.values(arr[i].children) === []) {
+        return answer = false;
+      } else {
+        return answer = true;
+      }
+    }
+  }
 
+
+  return answer;
+
+
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -114,6 +125,21 @@ The input and output of this function are the same as the input and output from 
 
 const hasChildrenEntries = (arr, character) => {
   // Solution code here...
+  let answer;
+  // let names = Object.values(arr[6].children)
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].name === character) {
+      if (Object.values(arr[i].children) == 0) {
+        return answer = false;
+      } else {
+        return answer = true;
+      }
+    }
+  }
+
+
+  return answer;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -124,6 +150,26 @@ Write a function named totalCharacters that takes in an array and returns the nu
 
 const totalCharacters = (arr) => {
   // Solution code here...
+  let result = 0;
+  let names = [];
+  let spouse = [];
+  let childrens = [];
+  for (let i = 0; i < arr.length; i++) {
+    names.push(arr[i].name);
+    if (arr[i].spouse !== null) {
+      spouse.push(arr[i].spouse);
+      for (let x = 0; x < arr[i].children.length; x++) {
+        childrens.push(arr[i].children[x])
+      }
+    }
+  }
+
+
+
+  result += names.length + spouse.length + childrens.length;
+  console.log(childrens);
+
+  return result
 };
 
 /* ------------------------------------------------------------------------------------------------
