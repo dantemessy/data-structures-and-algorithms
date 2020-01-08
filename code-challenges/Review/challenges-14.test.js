@@ -98,6 +98,16 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
+
+  let result = [] ;
+  arr.map((cha) => {
+    if(cha.mass > 77){
+      result.push(cha.name);
+    }
+  })
+
+  let answer = result.join(' - ');
+  return answer
 };
 
 /* ------------------------------------------------------------------------------------------------
