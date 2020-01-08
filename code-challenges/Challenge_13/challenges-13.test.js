@@ -93,6 +93,17 @@ For example, 'abcdefg' returns 'bdf'
 
 const onlyOddChars = (str) => {
   // Solution code here...
+  let splited = str.split('') ;
+  let result = '' ;
+  for(let i = 0 ; i < splited.length ; i++){
+    if( !(i%2 === 0) ){
+
+      result += splited[i];
+    }
+  }
+
+  return result ;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -103,6 +114,21 @@ Write a function named allHappy that takes in an array of strings and returns a 
 
 const allHappy = (arr) => {
   // Solution code here...
+  let flag = 0 ;
+  let test = arr.length ;
+
+  arr.map((val) => {
+    if(val.includes(':)')){
+      flag ++ ;
+    }
+  })
+
+  if(flag === test) {
+    return true ;
+  }else{
+    return false ;
+  }
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -113,6 +139,15 @@ Write a function named findAnything that takes in an array of strings, along wit
 
 const findAnything = (arr, target) => {
   // Solution code here...
+
+  let result = [] ;
+  arr.map((val) => {
+    if ( val.includes(target)){
+      result.push(val) ;
+    }
+  })
+
+  return result ;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -123,6 +158,22 @@ Write a function named findEvery that takes in an array of strings, along with a
 
 const findEvery = (arr, target) => {
   // Solution code here...
+  let flag = 0 ;
+  let test = arr.length ;
+
+  arr.map((val) => {
+    if(val.includes(target)){
+      flag ++ ;
+    }
+  })
+
+if ( flag === test){
+  return true ;
+}else{
+  return false ;
+}
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -139,6 +190,22 @@ For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again'
 
 const unenrollBrook = (arr) => {
   // Solution code here...
+
+  let result = [] ;
+
+  arr.map((inArr) => {
+    let temp =[] ;
+    inArr.map((val) => {
+      if(!(val.includes('Brook'))){
+        temp.push(val);
+      }
+    })
+
+    result.push(temp);
+  })
+
+
+  return result ;
 };
 
 /* ------------------------------------------------------------------------------------------------
