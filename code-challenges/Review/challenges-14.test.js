@@ -10,6 +10,19 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 
 const toTitleCase = (arr) => {
   // Solution code here...
+  let result = [] ;
+  arr.map( (name) => {
+
+    let splited = name.split('');
+     splited.splice(0 , 1 ,splited[0].toUpperCase()) ;
+    let joined = splited.join('');
+
+      console.log(joined)
+      // name = name[0].toUpperCase() ;
+      result.push(joined) ;
+  })
+
+  return result ;
 };
 
 /* ------------------------------------------------------------------------------------------------
